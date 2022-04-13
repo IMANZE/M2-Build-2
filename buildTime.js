@@ -14,45 +14,43 @@ Details:    Today you are in charge of building the shopping cart logic for a we
 */
 const shoppingCart = [
   {
-   name: "Marco",
-   lastName: "Rossi",
-   isAmbassador: true,
-   price: 50,
- },
- 
+    name: "Marco",
+    lastName: "Rossi",
+    isAmbassador: true,
+    price: 50,
+  },
+
   {
-   name: "Paul",
-   lastName: "Flynn",
-   isAmbassador: false,
-   price: 5,
- },
- 
+    name: "Paul",
+    lastName: "Flynn",
+    isAmbassador: false,
+    price: 5,
+  },
+
   {
-   name: "Amy",
-   lastName: "Reed",
-   isAmbassador: false,
-   price: 2,
- },
- ];
- 
- 
- const shoppingCartTotal = function () {
-   let total = 0;
-   let shippingCost = 50;
-   for (let i = 0; i < shoppingCart.length; i++) {
-     if (shoppingCart[i].isAmbassador === true) {
-       total = total + (shoppingCart[i].price * 0.3);
-     } 
-     else if (shoppingCart[i].isAmbassador === false){
-     total = total + shoppingCart[i].price;
-     }
-   }
-   if (total > 100) { 
-     total = total;
-   }else{
-     total = total + shippingCost
-   }
-   return total
- }
- 
- console.log(shoppingCartTotal());
+    name: "Amy",
+    lastName: "Reed",
+    isAmbassador: false,
+    price: 2,
+  },
+];
+
+const shoppingCartTotal = function () {
+  let total = 0;
+  let shippingCost = 50;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    if (shoppingCart[i].isAmbassador === true) {
+      total = total + shoppingCart[i].price * 0.3;
+    } else if (shoppingCart[i].isAmbassador === false) {
+      total = total + shoppingCart[i].price;
+    }
+  }
+  if (total > 100) {
+    total = total;
+  } else {
+    total = total + shippingCost;
+  }
+  return total;
+};
+
+console.log(shoppingCartTotal());
